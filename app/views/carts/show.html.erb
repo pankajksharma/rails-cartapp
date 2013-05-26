@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+<h2>Your Cart Details:</h2>
+<ul>
+<% @cart.line_items.each do |item| %>
+	<li><%= item.quantity %>&times; <%= item.product.title %></li>
+<% end %>
+</h2>
+<%= button_to 'Checkout', new_order_path, method: :get %>
+<%= link_to 'Back', store_path %>
